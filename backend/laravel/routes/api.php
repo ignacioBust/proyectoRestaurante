@@ -10,6 +10,11 @@ use App\Http\Controllers\ProductController;
 use App\Models\User;
 
 // Rutas públicas
+Route::get('/test', function(){
+  return response()->json([
+    'message' =>' API funcionando'
+  ]);
+});
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/menu/{user_id}', [MenuController::class, 'menu']);
