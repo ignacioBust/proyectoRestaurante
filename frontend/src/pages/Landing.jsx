@@ -47,7 +47,7 @@ const Landing = () => {
                         Crear mi menú gratis
                     </button>
                     <button
-                        onClick={() => navigate('/menu/2')}
+                        onClick={() => navigate('/menu/1')}
                         className="border border-gray-300 hover:border-gray-400 text-gray-600 font-semibold px-8 py-3 rounded-xl text-lg transition-colors duration-200"
                     >
                         Ver demo
