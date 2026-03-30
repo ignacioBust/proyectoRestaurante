@@ -7,6 +7,7 @@ const api = axios.create({
         'Accept': 'application/json',
     },
 })
+console.log('API URL:', import.meta.env.VITE_API_URL)
 
 
 // Interceptor para agregar el token en cada request automáticamente
