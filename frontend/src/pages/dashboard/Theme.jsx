@@ -120,7 +120,7 @@ const Theme = () => {
                             <h3 className="font-semibold text-gray-800 mb-1">Colorido</h3>
                             <p className="text-xs text-gray-500 mb-3">Colores vibrantes y llamativos.</p>
                             <button
-                                onClick={() => handleTheme('colorful')}
+                                onClick={() => user?.plan === 'pro' && handleTheme('colorful')}
                                 disabled={loading}
                                 className={`w-full py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${user?.theme === 'colorful' ? 'bg-orange-500 text-white' : 'border border-orange-500 text-orange-500 hover:bg-orange-50'}`}
                             >
