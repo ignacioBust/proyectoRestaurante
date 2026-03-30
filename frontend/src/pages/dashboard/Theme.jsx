@@ -77,7 +77,8 @@ const Theme = () => {
                     </div>
 
                     {/* Tema Dark */}
-                    <div className={`bg-white rounded-2xl shadow-sm border-2 overflow-hidden ${user?.theme === 'dark' ? 'border-orange-500' : 'border-gray-100'}`}>
+                   
+                    <div className={`bg-white rounded-2xl shadow-sm border-2 overflow-hidden ${user?.plan !== 'pro' ?  'opacity-60' : ''} ${user?.theme === 'dark' ? 'border-orange-500' : 'border-gray-100'}`}>
                         <div className="bg-gray-900 p-4 border-b border-gray-700">
                             <div className="h-3 w-16 bg-gray-600 rounded mb-2"></div>
                             <div className="h-2 w-24 bg-gray-700 rounded mb-3"></div>
@@ -93,17 +94,17 @@ const Theme = () => {
                             <h3 className="font-semibold text-gray-800 mb-1">Oscuro</h3>
                             <p className="text-xs text-gray-500 mb-3">Fondo negro, estilo elegante.</p>
                             <button
-                                onClick={() => handleTheme('dark')}
+                                onClick={() => user?.plan === 'pro' && handleTheme('dark')}
                                 disabled={loading}
                                 className={`w-full py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${user?.theme === 'dark' ? 'bg-orange-500 text-white' : 'border border-orange-500 text-orange-500 hover:bg-orange-50'}`}
                             >
-                                {user?.theme === 'dark' ? 'Seleccionado ✓' : 'Seleccionar'}
+                                { user?.plan !== 'pro' ? '🔒 Solo Plan Pro' : user?.theme === 'dark' ? 'Seleccionado ✓' : 'Seleccionar'}
                             </button>
                         </div>
                     </div>
 
                     {/* Tema Colorful */}
-                    <div className={`bg-white rounded-2xl shadow-sm border-2 overflow-hidden ${user?.theme === 'colorful' ? 'border-orange-500' : 'border-gray-100'}`}>
+                    <div className={`bg-white rounded-2xl shadow-sm border-2 overflow-hidden ${user?.plan !== 'pro' ? 'opacity-60' : ''} ${user?.theme === 'colorful' ? 'border-orange-500' : 'border-gray-100'}`}>
                         <div className="bg-gradient-to-br from-pink-400 to-orange-400 p-4 border-b border-orange-300">
                             <div className="h-3 w-16 bg-white opacity-50 rounded mb-2"></div>
                             <div className="h-2 w-24 bg-white opacity-30 rounded mb-3"></div>
@@ -123,7 +124,7 @@ const Theme = () => {
                                 disabled={loading}
                                 className={`w-full py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${user?.theme === 'colorful' ? 'bg-orange-500 text-white' : 'border border-orange-500 text-orange-500 hover:bg-orange-50'}`}
                             >
-                                {user?.theme === 'colorful' ? 'Seleccionado ✓' : 'Seleccionar'}
+                                {user?.plan !== 'pro' ? '🔒 Solo Plan Pro' : user?.theme === 'colorful' ? 'Seleccionado ✓' : 'Seleccionar'}
                             </button>
                         </div>
                     </div>
