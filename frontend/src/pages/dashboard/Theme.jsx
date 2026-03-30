@@ -44,7 +44,7 @@ const Theme = () => {
 
                 {success && user?.theme && (
                     <div className="bg-green-100 text-green-600 px-4 py-3 rounded-lg mb-6 text-sm">
-                        Tema aplicado correctamente ✅
+                        Tema {user?.theme} aplicado correctamente ✅
                     </div>
                 )}
 
