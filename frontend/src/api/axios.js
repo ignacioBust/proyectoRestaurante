@@ -1,13 +1,17 @@
 import axios from 'axios'
 
+const baseURL = window.location.hostname === 'localhost' 
+    ? 'http://127.0.0.1:8000/api'
+    : 'https://proyectorestaurante-production.up.railway.app/api'
+
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL + '/api',
+    baseURL,
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
     },
 })
-console.log('API URL:', import.meta.env.VITE_API_URL)
+
 
 
 // Interceptor para agregar el token en cada request automáticamente
