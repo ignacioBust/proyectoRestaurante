@@ -29,7 +29,7 @@ const Dashboard = () => {
         }
     }
 
-    const handleThemeClick = () =>{
+    const handleThemeClick = () => {
         navigate('/dashboard/theme')
     }
 
@@ -52,6 +52,10 @@ const Dashboard = () => {
         }
 
         img.src = 'data:image/svg+xml;base64,' + btoa(svgData)
+    }
+
+    const handleVerMenu = (id) => {
+        navigate(`/menu/${id}`)
     }
 
 
@@ -126,6 +130,12 @@ const Dashboard = () => {
                         >
                             Suscribirse al Plan Pro
                         </button>
+                    </div>
+
+                    <div className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow cursor-pointer" onClick={() => handleVerMenu(user?.id)}>
+                        <div className="text-3xl mb-3">👁️</div>
+                        <h3 className="font-semibold text-gray-800 mb-1">Ver mi menú</h3>
+                        <p className="text-sm text-gray-500">Mirá cómo ve tu menú el cliente.</p>
                     </div>
                 </div>
 
