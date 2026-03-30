@@ -18,6 +18,7 @@ Route::get('/test', function(){
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/menu/{user_id}', [MenuController::class, 'menu']);
+Route::post('/webhook/mercadopago', [PaymentController::class, 'webhook']);
 
 // Rutas protegidas
 Route::middleware('auth:sanctum')->group(function () {
