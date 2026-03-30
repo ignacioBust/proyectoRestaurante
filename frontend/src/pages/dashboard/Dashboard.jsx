@@ -59,6 +59,10 @@ const Dashboard = () => {
     }
 
 
+    const appURL = window.location.hostname === 'localhost'
+        ? 'http://localhost:5173'
+        : 'https://proyecto-restaurante-sigma.vercel.app'
+
 
     return (
         <div className="min-h-screen bg-orange-50">
@@ -101,7 +105,7 @@ const Dashboard = () => {
                         <h3 className="font-semibold text-gray-800 mb-1">Mi QR</h3>
                         <QRCodeSVG
                             id="qr-code"
-                            value={`${import.meta.env.VITE_APP_URL}/menu/${user?.id}`}
+                            value={`${appURL}/menu/${user?.id}`}
                             size={150}
                             className="mx-auto"
                         />
