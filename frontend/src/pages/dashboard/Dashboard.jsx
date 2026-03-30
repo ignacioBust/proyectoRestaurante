@@ -101,7 +101,7 @@ const Dashboard = () => {
                         <h3 className="font-semibold text-gray-800 mb-1">Mi QR</h3>
                         <QRCodeSVG
                             id="qr-code"
-                            value={`http://localhost:5173/menu/${user?.id}`}
+                            value={`${import.meta.env.VITE_APP_URL}/menu/${user?.id}`}
                             size={150}
                             className="mx-auto"
                         />
