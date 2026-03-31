@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Category;
+use App\Models\Scan;
 
 #[Fillable(['name', 'email', 'password', 'theme', 'plan'])]
 #[Hidden(['password', 'remember_token'])]
@@ -36,5 +37,9 @@ class User extends Authenticatable
     public function categories()
     {
         return $this->hasMany(Category::class);
+    }
+
+    public function scans(){
+        return $this->hasMany(Scan::class);
     }
 }
