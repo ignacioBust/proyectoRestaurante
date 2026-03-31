@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StatsController;
 use App\Models\User;
 
 // Rutas públicas
@@ -36,4 +37,6 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
   Route::post('/payment/create-preference', [PaymentController::class, 'createPreference']);
+
+  Route::get('/stats', [StatsController::class, 'index']);
 });
